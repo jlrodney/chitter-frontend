@@ -19,23 +19,3 @@ describe('should render title', () => {
     expect(node.html()).toEqual('<h1 class="App-title">Chitter Challenge!</h1>')
   });
 })
-
-describe('should render posts', () => {
-  it('creates todo', () => {
-  const wrapper = shallow(<PeepsContainer />);
-  wrapper.find('input').simulate('change', {
-    target: { value: 'hello' }
-  })
-  wrapper.find('button').simulate('click');
-
-  });
-
-  it('can add peep', () => {
-    const message = 'hmmm'
-    const component = mount(<App/>);
-    var node = component.find('.body').setValue(message)
-    component.find('.submess').onClick()
-    const actual = component.find('.Peeps-container').getText()
-    expect(actual).to.equal(message)
-  })
-})
